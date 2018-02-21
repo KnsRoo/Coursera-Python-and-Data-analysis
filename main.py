@@ -19,10 +19,17 @@ def counts(words, word):
 				count = count+1
 	return count
 
+def inputs(words, word):
+	count = 0
+	i,j = 0,0
+	for i in range(len(words)):
+		if words[i] == word:
+			count = count+1
+	return count
+
 
 
 if __name__ == "__main__":
-	print("start")
 	f = open('sentences.txt', 'r')
 	str1 = f.read()
 	str1 = str1.lower()
@@ -61,7 +68,7 @@ if __name__ == "__main__":
 	M = np.zeros((22,254))
 	for i in range(22):
 		for j in range(254):
-			M[i][j] = counts(a[i], words2[j])
+			M[i][j] = inputs(a[i], words2[j])
 	result = []
 	for i in range(22):
 		result.append(cosine(M[0], M[i]))

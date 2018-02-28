@@ -37,6 +37,8 @@ def third(x1,x2,x3,x4):
 
 def drawplot():
 	ax = np.arange(0,16,1)
+	f2 = np.vectorize(f)
+	plt.plot(ax, f2(ax))
 	plt.plot(ax, v1[0]+v1[1]*ax)
 	plt.plot(ax, v2[0]+v2[1]*ax+v2[2]*ax**2)
 	plt.plot(ax, v3[0]+v3[1]*ax+v3[2]*ax**2+v3[3]*ax**3)

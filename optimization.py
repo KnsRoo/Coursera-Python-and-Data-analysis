@@ -1,7 +1,5 @@
-import numpy as np
+import math, numpy as np, matplotlib.pyplot as plt
 from scipy.optimize import minimize, differential_evolution as dE
-import math
-import matplotlib.pyplot as plt
 
 def f(x):
 	return math.sin(x/5)*math.exp(x/10)+5*math.exp(-x/2)
@@ -10,17 +8,11 @@ def g(x):
 
 def writefile(iter, ans):
 	name = 'answer'+str(iter)+'.txt'
-	f = open(name, 'w')
-	f.write(ans)
-	f.close()
+	f = open(name, 'w'); f.write(ans); f.close()
     
-def drawplots(x1,x2):
-	x = np.arange(1,30,3)
-	f2 = np.vectorize(f); g2 = np.vectorize(g)
-	plt.plot(x, f2(x))
-	plt.plot(x, g2(x))
-	plt.xlabel(r'$x$')
-	plt.ylabel(r'$f(x)$')
+def drawplots(x1,x2, x = np.arange(1,30,0.01), f = np.vectorize(f), g = np.vectorize(g)):
+	plt.plot(x, f(x), x, g(x))
+	plt.xlabel(r'$x$'); plt.ylabel(r'$f(x)$')
 	plt.grid(True)
 	plt.show()
 

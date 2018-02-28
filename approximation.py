@@ -18,8 +18,7 @@ def solve_sys(x1,x2,x3 = 'nil', x4 = 'nil', v = []):
 		n,m,p,q = f(x1), f(x2), f(x3), f(x4)
 		B = np.array([n,m,p,q])
 	print(A)
-	v = solve(A,B)
-	return v
+	return solve(A,B)
 
 def drawplot(v1,v2,v3, ax = np.arange(0,16,0.01), f2 = np.vectorize(f)):
 	plt.plot(ax, f2(ax), ax, v1[0]+v1[1]*ax, ax, v2[0]+v2[1]*ax+v2[2]*ax**2, ax, v3[0]+v3[1]*ax+v3[2]*ax**2+v3[3]*ax**3)

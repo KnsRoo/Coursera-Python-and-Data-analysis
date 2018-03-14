@@ -36,3 +36,4 @@ if __name__ == "__main__":
 	v1, v2, v3 = solve_sys(1,15), solve_sys(1,8,15), solve_sys(1,4,8,15)
 	print(v1); print(v2); print(v3);
 	drawplot(v1,v2,v3)
+	write(v1); write(v2); write(v3);
